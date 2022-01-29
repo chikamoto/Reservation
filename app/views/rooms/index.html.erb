@@ -1,0 +1,26 @@
+<div class="room-list">
+ <h4 class="pb-4">登録済みルーム一覧</h4>
+ <table>
+  <thead>
+   <tr align="center">
+    <th>ルーム画像</th>
+    <th>ルーム名</th>
+    <th>ルーム紹介</th>
+    <th>料金</th>
+    <th>作成日</th>
+   </tr>
+  </thead>
+  <tbody>
+  <% @rooms.each do |room| %>
+   <tr>
+    <td><%= room.picture %></td>
+    <td><%= room.name %></td>
+    <td><%= room.introduction %></td>
+    <td><%= room.price %></td>
+    <td><%= room.created_at.to_s(:datetime_jp) %></td>
+    <td><%= link_to "参照", room %></td>
+   </tr>
+  <% end %>
+  </tbody>
+ </table>
+</div>
