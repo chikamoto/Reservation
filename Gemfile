@@ -7,6 +7,8 @@ gem 'carrierwave', '~> 2.0'
 
 gem 'pry-rails'
 
+
+
 ruby '2.6.9'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

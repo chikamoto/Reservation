@@ -3,6 +3,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
+  
+
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog

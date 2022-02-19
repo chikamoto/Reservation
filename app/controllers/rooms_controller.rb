@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Room.new(params.require(:room).permit(:name, :introduction, :price, :address, :picture))
+    @room = Room.new(params.require(:room).permit(:name, :introduction, :price, :address, :image))
     @room.user_id = current_user.id
     if @room.save
       flash[:notice] = "ルームを登録しました"
@@ -23,5 +23,9 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     @reservation = Reservation.new
+  end
+
+  def search
+    @rooms = Room.search(params[:search])
   end
 end

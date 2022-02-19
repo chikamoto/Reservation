@@ -13,30 +13,34 @@
   <body>
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
+
    <header>
     <div class="header-inner">
      <div class="header-left">
      <%= link_to("http://127.0.0.1:3000/") do %>
       <img alt="ロゴ画像" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png">
      <% end %> 
-       <div class="serch-box">
-       <input type="text" name="area" id="area" value="" class="form-control" placeholder="エリア"> <input type="text" name="word" id="word" value="" class="form-control" placeholder="キーワード">
-       </div> 
-     </div>     
-    </div>
+       <div class="search-box">
+        <%= form_with url: search_path, method: :get, local: true do |f| %>
+         <%= f.text_field :search, placeholder: "エリア" %>
+         <%= f.submit "検索", class: "btn btn-primary" %>
+        <% end %>
+       </div>      
+     </div>
    
      <div class="header-right">
       <% if user_signed_in? %>
+       <img src='<%= current_user.avatar %>' class = "icon_image">
        <%= link_to current_user.name  %>
        <div onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';">
         <a style="cursor:pointer;">▼メニュー</a>
        </div>
        <div id="menu1" style="display:none;clear:both;">
         <div class="menu-container">
-        <p><%= link_to "ルーム登録", :new_room %></p>
-        <p><%= link_to "登録ルーム一覧", :rooms %></p>
-        <p><%= link_to "予約ルーム一覧", :reservations %></p>
-         <p>設定</p>
+         <p><%= link_to "ルーム登録", :new_room %></p>
+         <p><%= link_to "登録ルーム一覧", :rooms %></p>
+         <p><%= link_to "予約ルーム一覧", :reservations %></p>
+         <p><%= link_to "設定", edit_user_registration_path %></p>
          <%= link_to 'ログアウト' ,destroy_user_session_path, class: 'dropdown-item', method: :delete%>
         </div>
        </div>
@@ -49,9 +53,10 @@
         <button type="button" class="btn-secondary">新規登録</button>
        <% end %>
        <% end %>
-     </div>
+     
     </div>
    </header>
+
    <%= yield %>
    
  <footer>

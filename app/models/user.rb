@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :timeoutable, :trackable
+  
+         mount_uploader :avatar,AvatarUploader
 
   has_many :rooms
   has_many :reservations

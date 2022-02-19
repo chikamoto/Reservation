@@ -14,6 +14,10 @@
     </div>
 
     <div class="field">
+      <%= f.file_field :avatar %>
+    </div>
+
+    <div class="field">
       <% if @minimum_password_length %>
       <% end %>
       <%= f.password_field :password, placeholder: "パスワード", autocomplete: "new-password" %>

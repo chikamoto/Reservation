@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'reservation/confirm'
   post 'reservation/back'
   post 'reservations/create', to:'reservations#create'
+  get "search" => "rooms#search"
   
   devise_for :users
   resources :users do
@@ -16,9 +17,13 @@ Rails.application.routes.draw do
   end
   resources :rooms do
     resources :reservations
+
+    get 'search', :on => :collection
   end
   resources :users
   resources :reservations
+
+  
 
   
   

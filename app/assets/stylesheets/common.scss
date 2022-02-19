@@ -11,27 +11,26 @@ div{
 header{
     background-color: black;
     width: 100%;
-    padding: 0px;
     height: 70px;
 }
 .header-inner{
-    box-sizing: border-box;
+    display: flex;
+    height: 100%;
 }
 .header-left{
-    float: left;
+    display: flex;
+    width: 500px;
 }
-.serch-box{
-    float: right;
-    margin-top: 15px;
+.search-box{
+    padding-top: 15px;
 }
 .form-control{
     width: 180px;
     height: 30px;
 }
 .header-right{
-    margin-right: 50px;
-    margin-top: 10px;
-    float: right;
+    padding-top: 10px;
+    margin-left: 650px;
     color: white;
 }
 button{
@@ -70,4 +69,8 @@ p{
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+}
+img.icon_image{
+    width: 16px;
+    height: 16px;
 }
