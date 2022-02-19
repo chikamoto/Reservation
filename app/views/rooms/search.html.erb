@@ -1,0 +1,18 @@
+<h1>Room Search</h1>
+<div class="search-result">
+ 
+  <% @rooms.each do |room| %>
+ <div class="detail-box">
+  <div class="room-image-s">
+     <img src='<%= room.image %>' class="room_image">
+  </div>
+  <div class ="room-detail">
+     <p><td><%= room.name %></td></p>
+     <p><td><%= room.address %></td></p>
+     <p><td>¥<%= room.price %></td></p>
+     <p><td><%= link_to "詳細", room %></td></p>
+  </div>
+ </div>
+  <% end %>
+ 
+</div>

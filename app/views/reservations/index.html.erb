@@ -1,0 +1,50 @@
+<section class="hero is-success">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+       予約済みルーム一覧
+      </h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-7">
+         <div class="card">
+          <div class="card-image">
+            <div class="content">
+              <table class="table is-narrow">
+                <thead>
+                  <tr align="center">
+                    <th>ルーム名</th>
+                    <th>ルーム紹介</th>
+                    <th>利用人数</th>
+                    <th>開始日</th>
+                    <th>終了日</th>
+                    <th>合計料金</th>
+                  </tr>
+                </thead>
+                <div>
+                  <% @reservations.each do |reservation| %>
+                  <tr>
+                    <img src='<%= reservation.room.image %>' class="room_image">
+                    <td><%= reservation.room.name %></td>
+                    <td><%= reservation.room.introduction %></td>
+                    <td><%= reservation.people %></td>
+                    <td><%= reservation.start %></td>
+                    <td><%= reservation.end %></td>
+                    <td>¥<%= reservation.total_price %></td>
+                  </tr>
+                  <% end %>
+                </div>
+              </table>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

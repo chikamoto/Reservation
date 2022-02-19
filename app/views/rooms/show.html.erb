@@ -1,0 +1,23 @@
+
+<div class="room-show">
+  <div class="room-detail">
+   <table>
+     <tr>
+     <th><img src='<%= @room.image %>' class="room_image"></th>
+     </tr>
+     <tr>
+     <th><%= @room.name %></th>
+     </tr>
+     <tr>
+     <th><%= @room.address %></th>
+     </tr>
+     <tr>
+     <th><%= @room.introduction %></th>
+     </tr>
+   </table> 
+  </div>
+
+ <div class="reserve-container">
+  <%= render 'reservations/form' %> 
+ </div>
+</div>

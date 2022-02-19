@@ -1,0 +1,27 @@
+<div class="container-devise"> 
+ <div class="devise_frame">
+  <h2>ログイン</h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    
+    <div class="field">
+      <%= f.email_field :email, placeholder: "メールアドレス", autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <% if @minimum_password_length %>
+      <% end %>
+      <%= f.password_field :password, placeholder: "パスワード", autocomplete: "new-password" %>
+    </div>
+
+    
+    <div class="actions">
+      <%= f.submit "ログイン" %>
+    </div>
+    
+  <% end %>
+ </div>
+</div>
+
+
